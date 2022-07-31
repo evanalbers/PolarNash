@@ -1,8 +1,13 @@
-/*
-AUTHOR: Evan Albers
-DATE CREATED: July 15th 2022
-SUMMARY: Implementation of the Polar Nash Algorithm
-*/
+/**
+ * @file PolarNash.cpp
+ * @author Evan Albers (ealbers@bowdoin.edu)
+ * @brief 
+ * @version 0.1
+ * @date 2022-07-31
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 
 #include "PolarNash.h"
 

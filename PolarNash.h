@@ -1,9 +1,13 @@
-/*
-AUTHOR: Evan Albers
-DATE CREATED: 14 July 2022
-SUMMARY: Header file for PolarNash
-*/
-
+/**
+ * @file PolarNash.h
+ * @author Evan Albers (ealbers@bowdoin.edu)
+ * @brief Header file for the PolarNash Algorithm Implementation
+ * @version 0.1
+ * @date 2022-07-31
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #include <vector>
 
 using namespace std;

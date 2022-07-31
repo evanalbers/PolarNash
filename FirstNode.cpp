@@ -1,7 +1,13 @@
-/*
-
-This is the case of the first node, handles relavant duties. 
-*/
+/**
+ * @file FirstNode.cpp
+ * @author Evan Albers (ealbers@bowdoin.edu)
+ * @brief Contains code pertaining to the FirstNode case
+ * @version 0.1
+ * @date 2022-07-31
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 
 #include "PolarNash.h"
 
@@ -27,6 +33,7 @@ void firstNodeCase(node* node) {
     point2D v_lt_vstar; //for when v less than vstar
     point2D v_gt_vstar; //for when v greater than vstar
     int counter = 0;
+
     //determining which way the s is oriented; if p_one_one is greater, will be regular s, else will be a reversed s. Pushing points onto vector accordingly
     if (p_one_one > p_one_zero) {
 

@@ -1,4 +1,13 @@
-
+/**
+ * @file MiddleNode.cpp
+ * @author Evan Albers (ealbers@bowdoin.edu)
+ * @brief contains code pertaining to the MiddleNode case
+ * @version 0.1
+ * @date 2022-07-31
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 
 #include "PolarNash.h"
 
@@ -28,29 +37,13 @@ void middleNodeCase(node* node) {
     float w_not = b/d;
     float w_one = (a + b) / (c + d);
 
+    int no_curves = (0 > u_one || 1 < u_one) || (0 > u_not || 1 < u_not) || (0 > w_one || 1 < w_one) || (0 > w_not || 1 < w_not);
+
     int counter = 0;
     //determining which of five cases is present
     //if all four points in range, both curves must be present
 
-    if ((0 <= u_one <= 1) && (0 <= u_not <= 1) && (0 <= w_not <= 1) && (0 <= w_one <= 1)) {
-
-
-
-    
-    } else if ((0 <= u_one <= 1) && (0 <= u_not <= 1)) //if this case, only top and bottom being intersected, one curve present
-    {
-
-        point2D a = {0, u_not};
-        point2D b = {1, u_not};
-        node -> right_msg[counter] = a;
-        node -> right_msg[++counter] = b;
-
-    } else if ((0 <= w_not <= 1) && (0 <= w_one <= 1)) //only l and r present, one curve present
-    {
-
-
-    } else //must be zero curves present, no intersection points, will never just have one? what about case where just L and top? or some combination? 
-    {
+    if (no_curves) {
 
         //if region is positive, v should play one always , else play zero
         if (((0.5 * d - b) / (0.5 * a - c) - 0.5) > 0) {
@@ -64,6 +57,23 @@ void middleNodeCase(node* node) {
             node -> right_msg[counter] = (point2D) {1, 0};
 
         }
+    
+    } else if ((0 > w_not || 1 < w_not) && (0 > w_one || 1 < w_one)) //if this case, only top and bottom being intersected, one curve present
+    {
+        
+        point2D a = {0, u_not};
+        point2D b = {1, u_not};
+        node -> right_msg[counter] = a;
+        node -> right_msg[++counter] = b;
+
+    } else if ((0 <= w_not <= 1) && (0 <= w_one <= 1)) //only l and r present, one curve present
+    {
+
+
+    } else //must be zero curves present, no intersection points, will never just have one? what about case where just L and top? or some combination? 
+    {
+
+       
     }
 
     //send the message to right node
